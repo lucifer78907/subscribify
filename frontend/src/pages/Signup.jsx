@@ -1,9 +1,9 @@
-import Header from "../components/Header";
+import Form from "../components/Form";
 
 const Signup = () => {
   return (
     <section>
-      <h1>Header is here</h1>
+      <Form />
     </section>
   );
 };

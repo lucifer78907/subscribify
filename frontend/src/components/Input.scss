@@ -1,0 +1,33 @@
+.form {
+  &__label {
+    align-self: flex-start;
+    width: 100%;
+    font-size: clamp(2rem, 1rem + 1vw, 2.4rem);
+    font-weight: 500;
+    color: var(--color-text);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__input {
+    flex: 0 1;
+    border: none;
+    box-shadow: 0 0.5rem 0.7rem rgba(59, 131, 246, 0.2);
+    padding: 2rem;
+    border-radius: 2rem;
+    font-family: inherit;
+    font-weight: 400;
+    color: var(--color-grey-400);
+    background-color: var(--color-bg);
+    font-size: clamp(1.7rem, 1rem + 1vw, 2.4rem);
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__input--invalid {
+    border: 1px solid #e11d48;
+  }
+}

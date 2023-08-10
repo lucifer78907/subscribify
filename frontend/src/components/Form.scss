@@ -1,0 +1,56 @@
+.form {
+  &__container {
+    margin: 4rem auto;
+    display: grid;
+    place-items: center;
+    padding: 4rem;
+    row-gap: 6rem;
+    width: 40%;
+    background-color: var(--form-bg-color);
+    box-shadow: var(--box-shadow-light);
+    border-radius: 3.6rem;
+    position: relative;
+    z-index: 1000;
+
+    @media only screen and (width<1600px) {
+      width: 50%;
+    }
+    @media only screen and (width<1250px) {
+      width: 60%;
+    }
+    @media only screen and (width<650px) {
+      width: 90%;
+    }
+  }
+
+  & > * {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  width: 90%;
+
+  &__button {
+    align-self: center;
+    padding: 2rem 3.5rem;
+    font-size: clamp(1.7rem, 1rem + 1vw, 2.4rem);
+    font-weight: 700;
+    color: var(--color-primary-50);
+    border: none;
+    border-radius: 3.6rem;
+
+    background-image: linear-gradient(
+      to right,
+      var(--color-secondary-500) 40%,
+      var(--color-primary-500)
+    );
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
