@@ -1,0 +1,13 @@
+.light {
+  --color-text: #262626;
+  --color-bg: #fafafa;
+  --box-shadow-light: 0 2rem 4rem rgba(23, 23, 23, 0.15);
+  --form-bg-color: rgba(255, 255, 255, 0.274);
+}
+
+.dark {
+  --color-text: #fafafa;
+  --color-bg: #171717;
+  --box-shadow-light: 0 0.5rem 1rem rgba(255, 255, 255, 0.1);
+  --form-bg-color: rgba(0, 0, 0, 0.274);
+}

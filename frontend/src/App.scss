@@ -17,6 +17,7 @@ body {
   box-sizing: border-box;
   font-family: var(--font-body);
   font-weight: 400;
-  color: #262626;
+  color: var(--color-text);
+  background-color: var(--color-bg);
   line-height: 1;
 }

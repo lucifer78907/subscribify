@@ -1,0 +1,25 @@
+.header {
+  padding: 2rem 6rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.theme__toggle {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 40px;
+  background-color: var(--color-bg);
+  box-shadow: var(--box-shadow-light);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  & span {
+    background-color: var(--color-primary-500);
+    padding: 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
