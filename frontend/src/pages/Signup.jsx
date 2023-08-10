@@ -3,7 +3,7 @@ import Form from "../components/Form";
 const Signup = () => {
   return (
     <section>
-      <Form />
+      <Form isLogin={false} />
     </section>
   );
 };

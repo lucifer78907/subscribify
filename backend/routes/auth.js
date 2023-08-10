@@ -22,7 +22,7 @@ router.post(
     body("password", "Please enter a password of atleast 7 chars")
       .trim()
       .isLength({ min: 7 }),
-    body("name", "Please enter a name of atleast 7 chars")
+    body("username", "Please enter a name of atleast 7 chars")
       .trim()
       .isLength({ min: 7 }),
   ],

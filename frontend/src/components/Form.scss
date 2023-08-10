@@ -23,6 +23,19 @@
     }
   }
 
+  &__para {
+    align-self: center;
+    color: var(--color-grey-500);
+    font-size: clamp(1.7rem, 1rem + 1vw, 2.4rem);
+
+    & span {
+      align-self: center;
+      color: var(--color-secondary-600);
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
   & > * {
     display: flex;
     flex-direction: column;
@@ -31,7 +44,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 4rem;
   width: 90%;
 
   &__button {

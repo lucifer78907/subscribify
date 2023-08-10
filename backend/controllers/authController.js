@@ -14,7 +14,7 @@ exports.signUp = async (req, res, next) => {
       throw error;
     }
     const email = req.body.email;
-    const name = req.body.name;
+    const username = req.body.username;
     const password = req.body.password;
 
     let user = await User.findOne({ email: email });
@@ -28,7 +28,7 @@ exports.signUp = async (req, res, next) => {
 
     user = new User({
       email,
-      name,
+      username,
       password: hashedPassword,
     });
 

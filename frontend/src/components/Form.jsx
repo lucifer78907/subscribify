@@ -1,6 +1,6 @@
 import Input from "./Input";
 import "./Form.scss";
-import { useFetcher, useNavigate } from "react-router-dom";
+import { useFetcher, useNavigate, Link } from "react-router-dom";
 import { json } from "react-router-dom";
 import { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -48,10 +48,20 @@ const Form = ({ isLogin }) => {
     }
   }, [fetcher?.data]);
 
+  const handleFormLogin = () => {
+    navigate("/login");
+  };
+
+  const handleFormSignUp = () => {
+    navigate("/signup");
+  };
+
   return (
     <article className="form__container">
       <ToastContainer style={{ fontSize: "1.7rem", width: "max-content" }} />
-      <h2 className="heading__secondary">{isLogin ? "Login" : "Signup"}</h2>
+      <h2 className="heading__secondary">
+        {isLogin ? "Login" : "Create Account"}
+      </h2>
       <fetcher.Form
         method="POST"
         action={`${isLogin ? "/login" : "/signup"}`}
@@ -60,9 +70,9 @@ const Form = ({ isLogin }) => {
         {!isLogin && (
           <Input
             label="Name"
-            id="name"
+            id="username"
             type="text"
-            name="name"
+            name="username"
             defaultValue="Rudra Pratap Singh"
           />
         )}
@@ -84,6 +94,18 @@ const Form = ({ isLogin }) => {
         <button className="form__button">{`${
           isLogin ? "Login" : "Signup"
         }`}</button>
+        {isLogin === false && (
+          <p className="form__para">
+            Already have an account?
+            <span onClick={handleFormLogin}>Login</span>
+          </p>
+        )}
+        {isLogin === true && (
+          <p className="form__para">
+            New to subsribify?
+            <span onClick={handleFormSignUp}>Sign Up</span>
+          </p>
+        )}
       </fetcher.Form>
     </article>
   );
@@ -126,7 +148,7 @@ export const signUpAction = async ({ request }) => {
 
   const formData = {
     email: data.get("email"),
-    username: data.get("name"),
+    username: data.get("username"),
     password: data.get("password"),
   };
 

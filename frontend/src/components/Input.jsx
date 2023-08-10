@@ -49,7 +49,7 @@ const Input = (props) => {
 
   return (
     <div>
-      <label htmlFor="email" className="form__label">
+      <label htmlFor={props.id} className="form__label">
         {props.label}
         <span>
           {inputFieldText.isValid && <FiCheckCircle color="#16A34A" />}

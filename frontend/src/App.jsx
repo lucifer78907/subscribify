@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./pages/Root";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import { loginAction, signUpAction } from "./components/Form";
 import "./App.scss";
 import uiContext from "./context/ui-context";
 import { useContext, useEffect } from "react";
@@ -16,10 +17,12 @@ const App = () => {
         {
           path: "/signup",
           element: <Signup />,
+          action: signUpAction,
         },
         {
           path: "/login",
           element: <Login />,
+          action: loginAction,
         },
       ],
     },
