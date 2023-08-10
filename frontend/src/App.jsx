@@ -8,6 +8,7 @@ import "./App.scss";
 import uiContext from "./context/ui-context";
 import { useContext, useEffect } from "react";
 import Plans from "./pages/Plans";
+import Billing from "./pages/Billing";
 
 // #TODO Remember me in signup login
 // #TODO Plans screen
@@ -32,6 +33,10 @@ const App = () => {
           path: "plans/:userId",
           element: <Plans />,
           loader: plansLoader,
+        },
+        {
+          path: "billing/:userId/:duration/:selectedPlan",
+          element: <Billing />,
         },
       ],
     },

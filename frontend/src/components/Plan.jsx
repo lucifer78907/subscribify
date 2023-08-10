@@ -1,10 +1,18 @@
 import "../pages/Plans";
 
 const Plan = (props) => {
+  let planClassName = `plans__box ${
+    props.selectedPlan === props.planName ? "plans__box--active" : ""
+  }`;
+
+  const handleClick = () => {
+    props.changeActivePlan(props.planName);
+  };
+
   return (
-    <article className="plans">
+    <article className="plans" onClick={handleClick}>
       <article className="plans__plan">
-        <div className="plans__box">
+        <div className={planClassName}>
           <p className="plans__name">{props.planName}</p>
         </div>
         <ul className="plans__details">

@@ -1,7 +1,8 @@
 .plans {
   &__box {
-    width: 15rem;
+    min-width: 15rem;
     height: 15rem;
+    padding: 0 2rem;
   }
 
   &__plan,
@@ -57,6 +58,8 @@
 
   &__info {
     &--duration {
+      position: relative;
+
       cursor: pointer;
       height: 15rem;
       display: flex;
@@ -77,6 +80,33 @@
       border-radius: 40px;
     }
   }
+
+  &__button {
+    align-self: center;
+    padding: 2rem 3.5rem;
+    font-size: clamp(1.7rem, 1rem + 1vw, 2.4rem);
+    font-weight: 700;
+    color: var(--color-primary-50);
+    border: none;
+    border-radius: 3.6rem;
+
+    background-image: linear-gradient(
+      to right,
+      var(--color-secondary-500) 40%,
+      var(--color-primary-500)
+    );
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__box--active {
+    background-color: var(--color-primary-500);
+    & p {
+      color: var(--color-grey-50);
+    }
+  }
 }
 
 .features__list {
@@ -93,4 +123,17 @@
     color: var(--color-text);
     text-align: center;
   }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.confirm {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--color-grey-400);
 }
