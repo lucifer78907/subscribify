@@ -6,7 +6,10 @@ import { loginAction, signUpAction } from "./components/Form";
 import "./App.scss";
 import uiContext from "./context/ui-context";
 import { useContext, useEffect } from "react";
+import Plans from "./pages/Plans";
 
+// #TODO Remember me in signup login
+// #TODO Plans screen
 const App = () => {
   const { themeColor } = useContext(uiContext);
   const router = createBrowserRouter([
@@ -15,14 +18,18 @@ const App = () => {
       element: <Root />,
       children: [
         {
-          path: "/signup",
+          path: "signup",
           element: <Signup />,
           action: signUpAction,
         },
         {
-          path: "/login",
+          path: "login",
           element: <Login />,
           action: loginAction,
+        },
+        {
+          path: "plans/:userId",
+          element: <Plans />,
         },
       ],
     },

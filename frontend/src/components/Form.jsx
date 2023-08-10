@@ -19,7 +19,7 @@ const Form = ({ isLogin }) => {
     } else if (fetcher?.data?.status === 200) {
       toast.success("Successfully logged in", {
         position: toast.POSITION.TOP_RIGHT,
-        onClose: () => navigate(`/`),
+        onClose: () => navigate(`/plans/${fetcher.data.userId}`),
       });
     } else if (fetcher?.data?.status === 401) {
       // wrong credentials
