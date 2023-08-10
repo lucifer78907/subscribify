@@ -3,6 +3,7 @@ import Root from "./pages/Root";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import { loginAction, signUpAction } from "./components/Form";
+import { loader as plansLoader } from "./pages/Plans";
 import "./App.scss";
 import uiContext from "./context/ui-context";
 import { useContext, useEffect } from "react";
@@ -30,6 +31,7 @@ const App = () => {
         {
           path: "plans/:userId",
           element: <Plans />,
+          loader: plansLoader,
         },
       ],
     },

@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
+const planRoutes = require("./routes/plans");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(planRoutes);
 app.use("/auth", authRoutes);
 
 app.use((error, req, res, next) => {
