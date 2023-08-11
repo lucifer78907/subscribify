@@ -17,7 +17,7 @@ const CheckoutForm = () => {
     event.preventDefault();
 
     const response = await fetch(
-      `http://localhost:8080/plans/${userId}/${selectedPlan}/${duration}`,
+      `https://subsbackendrestapi-aff0ae7fe4b5.herokuapp.com/plans/${userId}/${selectedPlan}/${duration}`,
       {
         method: "POST",
         headers: {
@@ -66,7 +66,8 @@ const CheckoutForm = () => {
 
 export const loader = async ({ request, params }) => {
   const response = await fetch(
-    "http://localhost:8080/plan/" + params.selectedPlan
+    "https://subsbackendrestapi-aff0ae7fe4b5.herokuapp.com/plan/" +
+      params.selectedPlan
   );
 
   if (!response.ok) throw json({ message: "Server Error" });

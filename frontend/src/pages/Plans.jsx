@@ -80,7 +80,9 @@ const Plans = () => {
 export default Plans;
 
 export const loader = async () => {
-  const response = await fetch("http://localhost:8080/plans");
+  const response = await fetch(
+    "https://subsbackendrestapi-aff0ae7fe4b5.herokuapp.com/plans"
+  );
 
   if (!response.ok) throw json({ message: "Server error occured" });
 

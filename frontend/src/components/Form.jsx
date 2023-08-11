@@ -128,13 +128,16 @@ export const loginAction = async ({ request }) => {
     password: data.get("password"),
   };
 
-  const response = await fetch("http://localhost:8080/auth/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  });
+  const response = await fetch(
+    "https://subsbackendrestapi-aff0ae7fe4b5.herokuapp.com/auth/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }
+  );
 
   if (
     response.status === 404 ||
@@ -159,13 +162,16 @@ export const signUpAction = async ({ request }) => {
     password: data.get("password"),
   };
 
-  const response = await fetch("http://localhost:8080/auth/signup", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  });
+  const response = await fetch(
+    "https://subsbackendrestapi-aff0ae7fe4b5.herokuapp.com/auth/signup",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }
+  );
 
   if (response.status === 409 || response.status === 422) return response;
 

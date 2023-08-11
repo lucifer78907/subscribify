@@ -21,20 +21,25 @@ const UserHome = () => {
 
 export const loader = async ({ params }) => {
   const { userId } = params;
-  const response = await fetch("http://localhost:8080/plans/" + userId);
+  const response = await fetch(
+    "https://subsbackendrestapi-aff0ae7fe4b5.herokuapp.com/plans/" + userId
+  );
   if (!response.ok) throw json({ message: "Server error" });
   return response;
 };
 
 export const action = async ({ request, params }) => {
   const { userId } = params;
-  const response = await fetch("http://localhost:8080/plans/" + userId, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({}),
-  });
+  const response = await fetch(
+    "https://subsbackendrestapi-aff0ae7fe4b5.herokuapp.com/plans/" + userId,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({}),
+    }
+  );
 
   if (!response.ok) return json({ message: "Server error" });
 

@@ -11,7 +11,9 @@ const Billing = () => {
 
   useEffect(() => {
     async function f1() {
-      const response = await fetch("http://localhost:8080/config");
+      const response = await fetch(
+        "https://subsbackendrestapi-aff0ae7fe4b5.herokuapp.com/config"
+      );
       const { publishableKey } = await response.json();
       setStripePromise(loadStripe(publishableKey));
     }
@@ -20,13 +22,16 @@ const Billing = () => {
 
   useEffect(() => {
     async function f2() {
-      const response = await fetch("http://localhost:8080/create-payment", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ selectedPlan, duration }),
-      });
+      const response = await fetch(
+        "https://subsbackendrestapi-aff0ae7fe4b5.herokuapp.com/create-payment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ selectedPlan, duration }),
+        }
+      );
       const { clientSecret } = await response.json();
       setClientSecret(clientSecret);
     }
