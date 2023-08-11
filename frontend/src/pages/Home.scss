@@ -1,0 +1,25 @@
+.home {
+  text-align: center;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+
+  &__button {
+    align-self: center;
+    padding: 2rem 3.5rem;
+    font-size: clamp(2rem, 1rem + 1vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    background-color: var(--color-secondary-600);
+    border: none;
+    border-radius: 3.6rem;
+    box-shadow: var(--box-shadow-light);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

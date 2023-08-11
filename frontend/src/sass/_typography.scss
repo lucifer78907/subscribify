@@ -1,11 +1,27 @@
+.heading__primary {
+  display: inline-block;
+  font-size: clamp(2.4rem, 3rem + 2vw, 9.8rem);
+  font-weight: 700;
+  color: var(--color-primary-500);
+
+  & span {
+    color: var(--color-secondary-500);
+  }
+}
+
 .heading__secondary {
   display: inline-block;
-  font-size: clamp(2.4rem, 1rem + 2vw, 4.8rem);
+  font-size: clamp(2rem, 1rem + 2vw, 4.8rem);
   font-weight: 700;
 
   color: var(--color-primary-500);
   letter-spacing: 0.75px;
   margin-top: -2rem;
+
+  &--home {
+    font-size: clamp(2.4rem, 1rem + 2vw, 3rem);
+    color: var(--color-grey-400);
+  }
 
   &--billing,
   &--plan {

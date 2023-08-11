@@ -1,29 +1,33 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { loginAction, signUpAction } from "./components/Form";
+import { loader as planLoader } from "./components/CheckoutForm";
 import Root from "./pages/Root";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import { loginAction, signUpAction } from "./components/Form";
-import { loader as plansLoader } from "./pages/Plans";
-import "./App.scss";
-import uiContext from "./context/ui-context";
-import { useContext, useEffect } from "react";
-import Plans from "./pages/Plans";
-import Billing from "./pages/Billing";
+import Plans, { loader as plansLoader } from "./pages/Plans";
 import UserHome, {
   loader as planDataLoader,
   action as deletePlanAction,
 } from "./pages/UserHome";
-import { loader as planLoader } from "./components/CheckoutForm";
+import Billing from "./pages/Billing";
+import { useContext, useEffect } from "react";
+import uiContext from "./context/ui-context";
+import "./App.scss";
+import Home from "./pages/Home";
+import ErrorPage from "./pages/ErrorPage";
 
-// #TODO Redirect if already  a plan exists
-// #TODO Remember me in signup login
 const App = () => {
   const { themeColor } = useContext(uiContext);
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root />,
+      errorElement: <ErrorPage />,
       children: [
+        {
+          index: true,
+          element: <Home />,
+        },
         {
           path: "signup",
           element: <Signup />,

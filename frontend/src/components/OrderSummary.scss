@@ -11,6 +11,9 @@
   &__detail {
     padding-bottom: 2rem;
     width: 30vw;
+    @media only screen and (width<=800px) {
+      width: 100%;
+    }
     border-bottom: 1px dotted var(--color-grey-600);
 
     display: flex;
