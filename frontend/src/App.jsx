@@ -9,6 +9,8 @@ import uiContext from "./context/ui-context";
 import { useContext, useEffect } from "react";
 import Plans from "./pages/Plans";
 import Billing from "./pages/Billing";
+import UserHome from "./pages/UserHome";
+import { loader as planLoader } from "./components/CheckoutForm";
 
 // #TODO Remember me in signup login
 // #TODO Plans screen
@@ -37,6 +39,11 @@ const App = () => {
         {
           path: "billing/:userId/:duration/:selectedPlan",
           element: <Billing />,
+          loader: planLoader,
+        },
+        {
+          path: "activePlan",
+          element: <UserHome />,
         },
       ],
     },

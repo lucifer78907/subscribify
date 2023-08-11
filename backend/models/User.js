@@ -18,6 +18,10 @@ const userSchema = new Schema({
     type: Object,
     default: null,
   },
+  planDuration: {
+    type: String,
+    default: null,
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);

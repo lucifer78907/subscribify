@@ -3,6 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
 const planRoutes = require("./routes/plans");
+const paymentRoutes = require("./routes/payments");
+const env = require("dotenv").config({ path: "./.env" });
 
 const app = express();
 
@@ -15,6 +17,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(paymentRoutes);
 app.use(planRoutes);
 app.use("/auth", authRoutes);
 
@@ -26,9 +29,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(
-    "mongodb+srv://Rudra:Hanuman%407@cluster0.mtjcxyj.mongodb.net/subs?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGODB_KEY)
   .then(() => {
     console.log("Connection established");
     app.listen(8080);

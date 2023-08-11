@@ -75,6 +75,7 @@ exports.login = async (req, res, next) => {
       message: "Successfully logged in",
       status: 200,
       userId: user._id,
+      hasAnyActivePlan: user.plan === null,
     });
   } catch (err) {
     if (!err.statusCode) {

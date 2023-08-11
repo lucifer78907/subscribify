@@ -19,9 +19,11 @@ const Plans = () => {
     setSelectedPlan(planName);
   };
 
-  const formSubmiHandler = () => {
-    if (selectedPlan !== null)
+  const formSubmiHandler = (e) => {
+    e.preventDefault();
+    if (selectedPlan !== null) {
       navigate(`/billing/${userId}/${planActive}/${selectedPlan}`);
+    }
   };
 
   return (

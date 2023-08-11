@@ -6,4 +6,16 @@
   color: var(--color-primary-500);
   letter-spacing: 0.75px;
   margin-top: -2rem;
+
+  &--billing,
+  &--plan {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    font-size: clamp(3rem, 2rem + 2vw, 6rem);
+  }
+
+  &--plan {
+    color: var(--color-grey-400);
+  }
 }

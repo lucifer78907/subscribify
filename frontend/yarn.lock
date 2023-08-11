@@ -596,10 +596,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/router@npm:1.7.2":
-  version: 1.7.2
-  resolution: "@remix-run/router@npm:1.7.2"
-  checksum: ea43bb662f1f5c93965989b1667fb6e8a301cb69c44341ee92c81cb15ea685b494168e5905593b5777d59058f1455b4b58083d5b895f04382e49362e420d7af4
+"@remix-run/router@npm:1.8.0":
+  version: 1.8.0
+  resolution: "@remix-run/router@npm:1.8.0"
+  checksum: f754f02d3b4fc86791b88acf16065000609e2324b9436027844a76831c7107c0994067cb83abdd6093c282bd518a5c89b5e02aead585782978586e3a04534428
+  languageName: node
+  linkType: hard
+
+"@stripe/react-stripe-js@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@stripe/react-stripe-js@npm:2.1.2"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    "@stripe/stripe-js": ^1.44.1 || ^2.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: fd1d51d9ea6b43d3a4e4d163b42aceaea8702b40ae75f5c3717ef38e64004e0cfc6bfa65986f9b764fd21af0e0255a0f3da42deb1a7164cdf80f1e542efd0ce6
+  languageName: node
+  linkType: hard
+
+"@stripe/stripe-js@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@stripe/stripe-js@npm:2.0.0"
+  checksum: eb01a5a8cfec45bc33be2def37a25a8361f853620aaede2c97d9fdab33f6297a5ddeedf46842e186d8801732e1955b7fce4f354db2d7a2eaea2c7753dc782429
   languageName: node
   linkType: hard
 
@@ -607,6 +627,13 @@ __metadata:
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
   checksum: ad87447820dd3f24825d2d947ebc03072b20a42bfc96cbafec16bff8bbda6c1a81fcb0be56d5b21968560c5359a0af4038a68ba150c3e1694fe4c109a063bed8
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:>=8.1.0":
+  version: 20.4.9
+  resolution: "@types/node@npm:20.4.9"
+  checksum: 504e3da96274f3865c1251830f4750bb0a8f6ef6f8648902cd3bba33370c5f219235471bfbf55cce726b25c8eacfcc8e2aad0ec3b13e27ea6708b00d4a9a46c8
   languageName: node
   linkType: hard
 
@@ -1180,9 +1207,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.477":
-  version: 1.4.488
-  resolution: "electron-to-chromium@npm:1.4.488"
-  checksum: 431c100e01262976bcef3d15505da3817d19978b57236aeede1d42653c3bc5872b79ea9ef7f2b13b2719a2663bd1cab718342217a8daa3bbc52c3819f418e552
+  version: 1.4.490
+  resolution: "electron-to-chromium@npm:1.4.490"
+  checksum: c81bf177ff64ceb54fa90f715f1d52fb9106b0ef4426b816c4ae0471c562d8f4d110531df1a164ce17eda13ad9481f6bcd15f1368b6d5442a1d2f93102ef221a
   languageName: node
   linkType: hard
 
@@ -2242,15 +2269,15 @@ __metadata:
   linkType: hard
 
 "jackspeak@npm:^2.0.3":
-  version: 2.2.2
-  resolution: "jackspeak@npm:2.2.2"
+  version: 2.2.3
+  resolution: "jackspeak@npm:2.2.3"
   dependencies:
     "@isaacs/cliui": ^8.0.2
     "@pkgjs/parseargs": ^0.11.0
   dependenciesMeta:
     "@pkgjs/parseargs":
       optional: true
-  checksum: 7b1468dd910afc00642db87448f24b062346570b8b47531409aa9012bcb95fdf7ec2b1c48edbb8b57a938c08391f8cc01b5034fc335aa3a2e74dbcc0ee5c555a
+  checksum: 8add557045eb51f619d247ac9786dbfa7ee4d52a0eb3fb488c2637aecfd15d12c284a4ff7dead2c1aba34d6228d9452e4509fb771daae87793a48786b095ee07
   languageName: node
   linkType: hard
 
@@ -2829,7 +2856,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -2844,6 +2871,15 @@ __metadata:
   version: 2.3.0
   resolution: "punycode@npm:2.3.0"
   checksum: 39f760e09a2a3bbfe8f5287cf733ecdad69d6af2fe6f97ca95f24b8921858b91e9ea3c9eeec6e08cede96181b3bb33f95c6ffd8c77e63986508aa2e8159fa200
+  languageName: node
+  linkType: hard
+
+"qs@npm:^6.11.0":
+  version: 6.11.2
+  resolution: "qs@npm:6.11.2"
+  dependencies:
+    side-channel: ^1.0.4
+  checksum: e812f3c590b2262548647d62f1637b6989cc56656dc960b893fe2098d96e1bd633f36576f4cd7564dfbff9db42e17775884db96d846bebe4f37420d073ecdc0b
   languageName: node
   linkType: hard
 
@@ -2890,26 +2926,26 @@ __metadata:
   linkType: hard
 
 "react-router-dom@npm:^6.14.2":
-  version: 6.14.2
-  resolution: "react-router-dom@npm:6.14.2"
+  version: 6.15.0
+  resolution: "react-router-dom@npm:6.15.0"
   dependencies:
-    "@remix-run/router": 1.7.2
-    react-router: 6.14.2
+    "@remix-run/router": 1.8.0
+    react-router: 6.15.0
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: a53dbc566ecab7890b829d42d38553684f704803c1f615db1bd6aa2d71542c369a1a79e4385be31ae71a14b72ddbcd0d8b51188248c2bccd44e015050d1927df
+  checksum: 95301837e293654f00934de6a4bdb27bfb06f613503e4cce7a93f19384793729832e7479d50faf3b9457d149014d4df40a3ee3a5193d7e3a3caadb7aaa6ec0f9
   languageName: node
   linkType: hard
 
-"react-router@npm:6.14.2, react-router@npm:^6.14.2":
-  version: 6.14.2
-  resolution: "react-router@npm:6.14.2"
+"react-router@npm:6.15.0, react-router@npm:^6.14.2":
+  version: 6.15.0
+  resolution: "react-router@npm:6.15.0"
   dependencies:
-    "@remix-run/router": 1.7.2
+    "@remix-run/router": 1.8.0
   peerDependencies:
     react: ">=16.8"
-  checksum: 7507bf5732b3a8ddbd901c2061216eebca73e194449bff58acc1445171e22bdda36b455b8af066e467748ebfb5875b3c0a565941c46af65c6f653a6ed0dc4fe4
+  checksum: 345b29277e13997f2625f0037f537eaf1955bb9f44ebfea80dd3ff83fc06273f7b64e1be944bfc75945fd2af5af917874133a8a93ed5ecaca523be8f045ae166
   languageName: node
   linkType: hard
 
@@ -3084,15 +3120,15 @@ __metadata:
   linkType: hard
 
 "sass@npm:^1.64.2":
-  version: 1.64.2
-  resolution: "sass@npm:1.64.2"
+  version: 1.65.1
+  resolution: "sass@npm:1.65.1"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 43a5c9b9b3b6ba27feb5c45eba90edc437b15a30fd443f5d2623bbd59fe4a922f2a6a9990296c6a6c2b5bce7f401922c5049357415f50b745952c2d478bc5526
+  checksum: 33e325fc80cd07489992e0814cd4929496f87493ffe78c423c2dbafa5746a574e6f3bde20c2a3e4ea47b16ee3d6bc5afcf1d36b405227b829d6c4c9ddcc7f8e2
   languageName: node
   linkType: hard
 
@@ -3322,10 +3358,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"stripe@npm:^12.17.0":
+  version: 12.17.0
+  resolution: "stripe@npm:12.17.0"
+  dependencies:
+    "@types/node": ">=8.1.0"
+    qs: ^6.11.0
+  checksum: ecd003fd47a8d6adfc77ba882ec222213559da020709eb7100e2788f80d8da34e2b8d416cf11bdb6fc5424622ff99414eea264b53c312f176aed6d88598226e9
+  languageName: node
+  linkType: hard
+
 "subscribify@workspace:.":
   version: 0.0.0-use.local
   resolution: "subscribify@workspace:."
   dependencies:
+    "@stripe/react-stripe-js": ^2.1.2
+    "@stripe/stripe-js": ^2.0.0
     "@types/react": ^18.2.15
     "@types/react-dom": ^18.2.7
     "@vitejs/plugin-react": ^4.0.3
@@ -3340,6 +3388,7 @@ __metadata:
     react-router-dom: ^6.14.2
     react-toastify: ^9.1.3
     sass: ^1.64.2
+    stripe: ^12.17.0
     vite: ^4.4.5
   languageName: unknown
   linkType: soft
