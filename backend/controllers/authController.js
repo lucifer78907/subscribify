@@ -71,11 +71,12 @@ exports.login = async (req, res, next) => {
       error.statusCode = 401;
       throw error;
     }
+    console.log(user);
     res.status(200).json({
       message: "Successfully logged in",
       status: 200,
       userId: user._id,
-      hasAnyActivePlan: user.plan === null,
+      hasAnyActivePlan: user.plan !== null,
     });
   } catch (err) {
     if (!err.statusCode) {

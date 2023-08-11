@@ -17,10 +17,17 @@ const Form = ({ isLogin }) => {
         onClose: () => navigate("/login"),
       });
     } else if (fetcher?.data?.status === 200) {
-      toast.success("Successfully logged in", {
-        position: toast.POSITION.TOP_RIGHT,
-        onClose: () => navigate(`/plans/${fetcher.data.userId}`),
-      });
+      if (fetcher.data.hasAnyActivePlan) {
+        toast.success("Successfully logged in", {
+          position: toast.POSITION.TOP_RIGHT,
+          onClose: () => navigate(`/activePlan/${fetcher.data.userId}`),
+        });
+      } else {
+        toast.success("Successfully logged in", {
+          position: toast.POSITION.TOP_RIGHT,
+          onClose: () => navigate(`/plans/${fetcher.data.userId}`),
+        });
+      }
     } else if (fetcher?.data?.status === 401) {
       // wrong credentials
       toast.error("Wrong Password!", {

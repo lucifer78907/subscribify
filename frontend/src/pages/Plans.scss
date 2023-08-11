@@ -11,6 +11,20 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    position: relative;
+
+    &--para {
+      position: absolute;
+      top: 20%;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--color-grey-500);
+
+      & span {
+        font-weight: 700;
+        color: var(--color-secondary-500);
+      }
+    }
   }
 
   &__details {
@@ -64,7 +78,7 @@
       height: 15rem;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       gap: 2rem;
       border-radius: 20px;
 

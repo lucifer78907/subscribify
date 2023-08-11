@@ -33,6 +33,10 @@ const Plans = () => {
           <p className="plans__info--duration" onClick={handlePlanChange}>
             <span className="plans__info--active">{planActive}</span>
           </p>
+          <p className="plans__info--para">
+            Click to see{" "}
+            <span>{planActive === "Monthly" ? "Yearly" : "Monthly"}</span> plans
+          </p>
           <ul className="features__list">
             <li className="features__list--item">{planActive} Price</li>
             <li className="features__list--item">Video Quality</li>
