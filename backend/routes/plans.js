@@ -10,4 +10,6 @@ router.get("/plan/:planName", planController.getPlan);
 
 router.post("/plans/:userId/:planName/:duration", planController.postPlan);
 
+router.delete("/plans/:userId", planController.deletePlan);
+
 module.exports = router;

@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router";
+import { redirect, useLoaderData } from "react-router";
 import CurrentPlanCard from "../components/CurrentPlanCard";
 import "../components/CurrentPlanCard.scss";
 import { json } from "react-router";
@@ -24,6 +24,21 @@ export const loader = async ({ params }) => {
   const response = await fetch("http://localhost:8080/plans/" + userId);
   if (!response.ok) throw json({ message: "Server error" });
   return response;
+};
+
+export const action = async ({ request, params }) => {
+  const { userId } = params;
+  const response = await fetch("http://localhost:8080/plans/" + userId, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({}),
+  });
+
+  if (!response.ok) return json({ message: "Server error" });
+
+  return redirect(`/plans/${userId}`);
 };
 
 export default UserHome;

@@ -1,6 +1,13 @@
+import { useNavigate, useParams } from "react-router";
 import "./CurrentPlanCard.scss";
+import { useFetcher } from "react-router-dom";
+import { useState } from "react";
 
 const CurrentPlanCard = ({ lastUpdate, planDuration, plan }) => {
+  const navigate = useNavigate();
+  const { userId } = useParams();
+  const fetcher = useFetcher();
+  const [isCancelled, setIsCancelled] = useState(false);
   const currDate = new Date(lastUpdate);
   const formatter = new Intl.DateTimeFormat("en-US", {
     dateStyle: "medium",
@@ -17,15 +24,30 @@ const CurrentPlanCard = ({ lastUpdate, planDuration, plan }) => {
     futureDate = formatter.format(futureDate);
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/plans/${userId}`);
+  };
+
+  const handleClick = () => setIsCancelled(true);
+
   return (
     <article className="currentplan">
-      <header className="currentplan__header">
-        <p className="currentplan__header--para">
-          Current Plan Details <span>Active</span>
-        </p>
-        <button className="currentplan__header--button">Cancel</button>
-      </header>
-      <main className="currentplan__main">
+      <fetcher.Form
+        action={`/activePlan/${userId}`}
+        method="DELETE"
+        className="currentplan__header"
+      >
+        {!isCancelled && (
+          <p className="currentplan__header--para">
+            Current Plan Details <span>Active</span>
+          </p>
+        )}
+        <button onClick={handleClick} className="currentplan__header--button">
+          {isCancelled ? "Cancelled!! Redirecting Now" : "Cancel"}
+        </button>
+      </fetcher.Form>
+      <form onSubmit={handleSubmit} className="currentplan__main">
         <ul className="currentplan__details">
           <li className="currentplan__details--plan">{plan["Plan Name"]}</li>
           <li className="currentplan__details--device">
@@ -43,7 +65,7 @@ const CurrentPlanCard = ({ lastUpdate, planDuration, plan }) => {
           Your subscription has started on {date} and will autorenew on{" "}
           {futureDate}
         </p>
-      </main>
+      </form>
     </article>
   );
 };
