@@ -1,0 +1,108 @@
+.userhome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.currentplan {
+  background-color: var(--color-bg);
+  box-shadow: var(--box-shadow-light);
+  border-radius: 2rem;
+  padding: 2.4rem 3rem;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  @media only screen and (width<=925px) {
+    width: auto;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--para {
+      display: flex;
+      align-items: center;
+      @media only screen and (width<=925px) {
+        gap: 2rem;
+      }
+      gap: 5rem;
+      font-size: clamp(2rem, 1rem + 1vw, 2.4rem);
+      font-weight: 500;
+      color: var(--color-text);
+      & span {
+        background-color: var(--color-primary-200);
+        color: var(--color-primary-500);
+        padding: 1rem;
+        border-radius: 1.2rem;
+      }
+    }
+
+    &--button {
+      font-size: clamp(1.7rem, 1rem + 1vw, 2rem);
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 1.2rem;
+      border: none;
+      background-color: #fecaca;
+      color: #ef4444;
+      padding: 1rem;
+    }
+  }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    &--button {
+      align-self: flex-start;
+      font-size: clamp(1.7rem, 1rem + 1vw, 2rem);
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 1.2rem;
+      border: none;
+      padding: 1rem;
+      background-color: var(--color-secondary-200);
+      color: var(--color-secondary-600);
+    }
+
+    &--para {
+      font-size: clamp(1.7rem, 1rem + 1vw, 2rem);
+      color: var(--color-grey-500);
+      background-color: var(--color-grey-200);
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+  }
+
+  &__details {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    &--plan {
+      font-size: clamp(1.7rem, 1rem + 1vw, 2rem);
+      font-weight: 700;
+      color: var(--color-grey-400);
+    }
+    &--device {
+      font-size: clamp(1.4rem, 1rem + 1vw, 1.7rem);
+      font-weight: 600;
+      margin-top: -2rem;
+      color: var(--color-grey-300);
+    }
+
+    &--price {
+      & span {
+        font-weight: 700;
+      }
+      font-size: clamp(2.4rem, 1rem + 2vw, 3.2rem);
+      color: var(--color-text);
+      font-weight: 400;
+    }
+  }
+}

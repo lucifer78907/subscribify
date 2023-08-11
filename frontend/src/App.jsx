@@ -9,11 +9,11 @@ import uiContext from "./context/ui-context";
 import { useContext, useEffect } from "react";
 import Plans from "./pages/Plans";
 import Billing from "./pages/Billing";
-import UserHome from "./pages/UserHome";
+import UserHome, { loader as planDataLoader } from "./pages/UserHome";
 import { loader as planLoader } from "./components/CheckoutForm";
 
+// #TODO Redirect if already  a plan exists
 // #TODO Remember me in signup login
-// #TODO Plans screen
 const App = () => {
   const { themeColor } = useContext(uiContext);
   const router = createBrowserRouter([
@@ -42,8 +42,9 @@ const App = () => {
           loader: planLoader,
         },
         {
-          path: "activePlan",
+          path: "activePlan/:userId",
           element: <UserHome />,
+          loader: planDataLoader,
         },
       ],
     },
