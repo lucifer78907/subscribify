@@ -1,10 +1,10 @@
+const env = require("dotenv").config({ path: "./.env" });
 const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
 const planRoutes = require("./routes/plans");
 const paymentRoutes = require("./routes/payments");
-const env = require("dotenv").config({ path: "./.env" });
 
 const app = express();
 
@@ -32,6 +32,6 @@ mongoose
   .connect(process.env.MONGODB_KEY)
   .then(() => {
     console.log("Connection established");
-    app.listen(8080);
+    app.listen(process.env.PORT || 3000);
   })
   .catch((err) => console.log(err));
