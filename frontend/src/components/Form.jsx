@@ -2,13 +2,15 @@ import Input from "./Input";
 import "./Form.scss";
 import { useFetcher, useNavigate, Link } from "react-router-dom";
 import { json } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Form = ({ isLogin }) => {
   const fetcher = useFetcher();
   const navigate = useNavigate();
+  const [isChecked, setIsChecked] = useState(false);
+  const checkRef = useRef();
 
   useEffect(() => {
     if (fetcher?.data?.status === 201) {
@@ -63,6 +65,10 @@ const Form = ({ isLogin }) => {
     navigate("/signup");
   };
 
+  const handleChange = () => {
+    setIsChecked(checkRef.current.checked);
+  };
+
   return (
     <article className="form__container">
       <ToastContainer style={{ fontSize: "1.7rem", width: "max-content" }} />
@@ -98,6 +104,18 @@ const Form = ({ isLogin }) => {
           name="password"
           defaultValue="mySuperSecretp@$$Word"
         />
+        {isLogin && (
+          <label className="checkbox__label" htmlFor="check">
+            Remember me
+            <input ref={checkRef} type="checkbox" id="check" hidden />
+            <span
+              onClick={handleChange}
+              className={`checkbox__box ${
+                isChecked ? "checkbox__box--green" : ""
+              }`}
+            ></span>
+          </label>
+        )}
         <button className="form__button">{`${
           isLogin ? "Login" : "Signup"
         }`}</button>
@@ -109,7 +127,7 @@ const Form = ({ isLogin }) => {
         )}
         {isLogin === true && (
           <p className="form__para">
-            New to subsribify?
+            New to subscribify?
             <span onClick={handleFormSignUp}>Sign Up</span>
           </p>
         )}

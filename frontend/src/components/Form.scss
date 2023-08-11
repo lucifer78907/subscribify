@@ -67,3 +67,37 @@
     }
   }
 }
+
+.checkbox {
+  &__label {
+    position: relative;
+    font-family: inherit;
+    font-size: clamp(2rem, 1rem + 1vw, 3rem);
+    font-weight: 500;
+    color: var(--color-grey-400);
+  }
+
+  &__box {
+    width: 5rem;
+    height: 5rem;
+
+    @media only screen and (width<=600px) {
+      width: 4rem;
+      height: 4rem;
+    }
+    box-shadow: var(--box-shadow-light);
+    border-radius: 50%;
+    position: absolute;
+    background-color: #fff;
+    top: -16%;
+    right: 0;
+
+    &--green {
+      background-image: linear-gradient(
+        to bottom,
+        var(--color-secondary-200),
+        var(--color-secondary-400)
+      );
+    }
+  }
+}
